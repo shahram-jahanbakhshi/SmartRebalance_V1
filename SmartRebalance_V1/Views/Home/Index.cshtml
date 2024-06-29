@@ -1,0 +1,146 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/shared/layout.cshtml";
+}
+
+<div class="well_sh howToUse">
+    <h2>How to use the Smart Rebalance simulator:</h2>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="well_sh">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Choose a time frame</h3>
+                        <p>
+                            Select a timeframe to simulate the strategy. At the moment, the simulation is done with the
+                            accuracy of the price in the daily interval.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="well_sh">
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Get Price History</h3>
+                        <p>
+                            Get the price history of Bitcoin, Ethereum and Tether in Tomans. Currently, the simulation
+                            is based on the daily closing price.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="well_sh">
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Set the initial capital and portfolio weight.</h3>
+                        <p>
+                            In this section, you can specify the amount of initial capital and the capital distribution ratio
+                            on your portfolio.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="well_sh">
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>See the simulation result.</h3>
+                        <p>Get the result on the chart by clicking on the start simulation button.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="well_sh chossTimeFrame">
+    <h3>Choose a time frame:</h3>
+    <div class="row">
+        <div class="col-sm-6">
+            <p>From: <input id="from" type="text" class="datepicker"></p>
+        </div>
+        <div class="col-sm-6">
+            <p>To: <input id="to" type="text" class="datepicker"></p>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="well_sh GetHistory">
+    <h3>Get Price Historis:</h3>
+    <div class="row">
+        <div class="col-sm-4">
+            <button id="getHistory_1" type="button" class="btn btn-primary">Get Historis USDT</button>
+        </div>
+        <div class="col-sm-4">
+            <button id="getHistory_2" type="button" class="btn btn-primary">Get Historis BTC</button>
+        </div>
+        <div class="col-sm-4">
+            <button id="getHistory_3" type="button" class="btn btn-primary">Get Historis ETH</button>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="well_sh SetInitRatio">
+    <div class="well_sh">
+        <div class="row ">
+
+            <div class="col-sm-6">
+                <p>Initial Capital(TMN): <input class="initTotalInv" id="inToInv" type="number" min="0" value="100000000" step="1000000"></p>
+            </div>
+        </div>
+    </div>
+    <div class="well_sh">
+        <div class="row">
+
+            <h3>Set portfolio weight:</h3>
+            <div class="col-sm-4">
+                <p>USDT ratio: <input class="ratio" id="usdtRatio" type="number" min="1" value="1"></p>
+            </div>
+            <div class="col-sm-4">
+                <p>BTC ratio: <input class="ratio" id="btcRatio" type="number" min="1" value="1"></p>
+            </div>
+            <div class="col-sm-4">
+                <p>ETH ratio: <input class="ratio" id="ethRatio" type="number" min="1" value="1"></p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="well_sh StartRebalance">
+
+    <div class="row">
+
+        <div class="col-sm-12">
+            <button id="startRebalance" type="button" class="btn btn-primary btn-block">Start Simolation</button>
+        </div>
+    </div>
+
+</div>
+
+<div class="well_sh" id="ChartResult">
+    @*<canvas id="CompareResultChart" style="width:100%;max-width:1200px" role="img" aria-label="resultChart"></canvas>*@
+</div>
+
+
+@section script{
+      
+      <script src="~/assets/js/errorManageSmartRebalance.js"></script>
+}
+
