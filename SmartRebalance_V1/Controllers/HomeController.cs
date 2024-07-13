@@ -13,24 +13,13 @@ namespace SmartRebalance_V1.Controllers
         {
             return View();
         }
-
-        public ActionResult test() {
-            return View();
-
-        }
-
-        public ActionResult test2()
-        {
-            return View();
-
-        }
-
+         
         public ActionResult AboutProject()
         {
             return View();
 
         }
-
+        
         public ActionResult AboutSmartRebalance()
         {
             return View();
